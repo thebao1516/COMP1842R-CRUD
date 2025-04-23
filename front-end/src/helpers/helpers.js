@@ -16,8 +16,8 @@ const handleError = fn => async (...params) => {
     try {
         return await fn(...params);
     } catch (error) {
-        console.log(error); // log vẫn giữ
-        throw error; // rất quan trọng để component bắt được
+        console.log(error);
+        throw error;
     }
 };
 
