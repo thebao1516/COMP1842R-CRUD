@@ -55,7 +55,7 @@ export default {
       // Handle form submission
       onSubmit() {
           // Check if any fields are empty
-          if (this.word.english === '' || this.word.german === '' || this.word.fremch === '') {
+          if (!this.word.english || !this.word.german || !this.word.french) {
               this.errorsPresent = true; // Show error message
           } else {
               // Emit event to create or update the word

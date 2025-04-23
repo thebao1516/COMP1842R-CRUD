@@ -11,6 +11,7 @@ exports.list_all_words = (req, res) => {
 exports.create_a_word = (req, res) => {
   const newWord = new Vocab(req.body);
   newWord.save((err, word) => {
+    console.log(err);
     if (err) {
       if (err.code === 11000) {
         // Duplicate key error

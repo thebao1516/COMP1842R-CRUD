@@ -12,13 +12,14 @@
 
     const baseURL = "http://localhost:3000/words/";
 // Utility function to handle errors in API calls
-    const handleError = fn => async (...params) => {
-        try {
-            return await fn(...params);
-        } catch (error) {
-            console.log(error);// Log error for debugging
-        }
-    };
+const handleError = fn => async (...params) => {
+    try {
+        return await fn(...params);
+    } catch (error) {
+        console.log(error); // log vẫn giữ
+        throw error; // rất quan trọng để component bắt được
+    }
+};
 
     export const api = {
         // Get a single word by ID
